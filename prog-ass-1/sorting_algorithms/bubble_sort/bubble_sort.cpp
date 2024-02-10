@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <vector>
+#include "bubble_sort.h"
 
 /**
  * @brief Sorts an array using the bubble sort algorithm.

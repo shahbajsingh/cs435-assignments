@@ -8,14 +8,14 @@
  * @param arr The array to be sorted.
  * @param start The start index of the array.
  * @param end The end index of the array.
- * @return int 
+ * @return int The pivot index.
  */
 int partition(int arr[], int start, int end){
 
     int pivot = arr[start];
     int count = 0;
 
-    for (int i = start; i <= end; i++){
+    for (int i = start + 1; i <= end; i++){
         if (arr[i] <= pivot)
             count++;
     }

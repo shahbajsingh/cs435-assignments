@@ -5,10 +5,10 @@
 /**
  * @brief Merge two subarrays of arr[].
  * 
- * @param arr 
- * @param l 
- * @param m 
- * @param r 
+ * @param arr The array to be sorted.
+ * @param l Left index of the array.
+ * @param m Middle index of the array.
+ * @param r Right index of the array.
  */
 void merge(int arr[], int const l, int const m, int const r) {
     int const subarr1 = m - l + 1; // size of left subarray

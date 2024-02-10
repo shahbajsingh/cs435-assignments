@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <vector>
+#include "merge_sort.h"
 
 /**
  * @brief Merge two subarrays of arr[].

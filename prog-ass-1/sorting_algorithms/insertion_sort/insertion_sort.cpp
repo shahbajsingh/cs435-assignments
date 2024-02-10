@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <vector>
+#include "insertion_sort.h"
 
 /**
  * @brief Sorts an array using the insertion sort algorithm.

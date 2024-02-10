@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void insertionSort(std::vector<int>& arr, int n);
+void insertion_sort(std::vector<int>& arr, int n);
 
 #endif // INSERTION_SORT_H

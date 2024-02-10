@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <vector>
+#include "selection_sort.h"
 
 /**
  * @brief Sorts an array using the selection sort algorithm.
@@ -8,7 +9,7 @@
  * @param arr The array to be sorted.
  * @param n The size of the array.
  */
-void selectionSort(int arr[], int n){
+void selection_sort(int arr[], int n){
     int i, j, min_idx;
 
     // iterate arr[]
@@ -69,13 +70,13 @@ int main() {
     print_arr(arr, n);
     std::cout << std::endl;
 
-    selectionSort(arr, n);
+    selection_sort(arr, n);
 
     std::cout << "Sorted array: ";
     print_arr(arr, n);
     std::cout << std::endl;
 
-    std::cout << "Average runtime: " << measure_runtime(selectionSort, arr, n, 100) << " ms" << std::endl;
+    std::cout << "Average runtime: " << measure_runtime(selection_sort, arr, n, 100) << " ms" << std::endl;
 
     return 0;
 }

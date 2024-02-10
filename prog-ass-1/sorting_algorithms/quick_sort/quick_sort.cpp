@@ -1,6 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <vector>
+#include "quick_sort.h"
 
 /**
  * @brief Partitions the array and returns the pivot index.

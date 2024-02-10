@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void selectionSort(std::vector<int>& arr, int n);
+void selection_sort(std::vector<int>& arr, int n);
 
 #endif // SELECTION_SORT_H

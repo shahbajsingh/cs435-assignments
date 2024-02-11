@@ -41,7 +41,9 @@ The entirety of the program may thus be found in <code>[comparing_sorting_algori
 and can be run using the C++ compiler of your choice; I used the commands
 
 > `cd sorting_algorithms`
+
 > `clang++ -std=c++11 -o csa comparing_sorting_algorithms.cpp`
+
 > `./csa`
 
 <br />

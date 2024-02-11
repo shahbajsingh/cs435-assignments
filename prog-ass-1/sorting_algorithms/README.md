@@ -6,7 +6,7 @@ ____
 Programming Assignment 1
 ===
 
-###### Abstract
+##### Abstract
 
 Implementation of
 
@@ -18,9 +18,12 @@ Implementation of
 
 on arrays of sizes varying from 10, 100, 1000, to 100 000 (100K) in order to analyze differences between runtime at varying values of input `n`.
 
-</br>
 
- ###### Running the Program
+____
+
+ ##### Running the Program
+
+ <br />
 
 While I had originally intended for this program to be ran in a `.ipynb` file, but I
 encountered setbacks on my system when trying to run computationally taxing cells
@@ -48,7 +51,11 @@ and can be run using the C++ compiler of your choice; I used the commands
 
 <br />
 
-###### Results
+____
+
+##### Results
+
+<br />
 
 Running the `.cpp` file as above should yield results not too dissimilar from
 the following, which were output on my system:
@@ -59,9 +66,13 @@ the following, which were output on my system:
 
 For normalization purposes and to ease interpretation I will transcribe the results of each sorting algorithm rounded to the nearest nanosecond (ns), partitioned by testing specifications (size and random nature of array).
 
-<br/>
+<br />
 
-###### Performance Analysis
+____
+
+##### Performance Analysis
+
+<br />
 
 _**RANDOM ARRAYS**_
 
@@ -102,3 +113,5 @@ The answer to why this may be lies in the best and worst case time complexities 
 `Quicksort`, while sharing the same best and average case time complexity with `merge sort` ($\Omega(n \times log(n))$ and $\theta(n \times log(n))$ respectively), dwarfed in comparison to its competitior when input sizes grew too large, tending towards its worst case time complexity $O (n^2)$.
 
 `Merge sort` retains a consistent time complexity of $\theta(n \times log (n))$ across the board, for both best case and worst case; making use of an auxillary function, as `quicksort` does with `partition()`, but rather for merging subarrays, merge sort stands out as superior among the five algorithms analyzed for sorting information that is in any manner of random fashion, whether it is tasked to sort arrays increasing or decreasing in steps or completely random ones.
+
+____

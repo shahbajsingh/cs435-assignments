@@ -66,30 +66,3 @@ _Grading Criteria:_
 * Clarity and readability of code
 * Accuracy and completeness of the performance analysis report
 * Adherence to submission guidelines and deadlines
-
-___
-
-Shahbaj Singh
-CS 435 Section 102
-Professor Nahata
-
-## <ins> Programming Assignment 01 </ins>
-
-### Sorting Algorithm Performance Comparison
-
-&nbsp;
-&nbsp;
-
-###### Running the Program
-
-The majority of my implementation of the pertinent sorting algorithms– insertion sort, selection sort, merge sort, bubble sort, and quick sort– are written in an interactive python notebook with <code>.ipynb</code> file extension.
-
-The implementation of these sorting algorithms is written in Python and the output of their test execution (on my system) is all displayed within the notebook, in the file [comparing_sorting_algorithms.ipynb](/prog-ass-1/comparing_sorting_algorithms.ipynb).
-
-###### Bugs
-
-Writing in Python, however, to an extent restricted my ability to thoroughly test each of these sorting algorithms; I ran into problems in testing these algorithms against arrays of sizes greater than 1M (1 million) in each and every case, and of arrays of sizes greater than 10 000 in the case of quick sort.
-
-To work around this, I decided to rewrite the algorithms in C++.
-
-###### Analysis

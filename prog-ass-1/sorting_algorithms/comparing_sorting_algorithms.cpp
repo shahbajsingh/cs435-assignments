@@ -399,113 +399,126 @@ int main(){
     std::vector<int> rand_arr_10 = gen_rand_arr(10, 0, 1000);
     std::vector<int> rand_arr_100 = gen_rand_arr(100, 0, 1000);
     std::vector<int> rand_arr_1k = gen_rand_arr(1000, 0, 1000);
-    std::vector<int> rand_arr_1m = gen_rand_arr(1000000, 0, 1000);
+    std::vector<int> rand_arr_100k = gen_rand_arr(100000, 0, 1000);
 
     // Increasing arrays
     std::vector<int> incr_arr_10 = gen_increasing_rand_arr(10, 10);
     std::vector<int> incr_arr_100 = gen_increasing_rand_arr(100, 10);
     std::vector<int> incr_arr_1k = gen_increasing_rand_arr(1000, 10);
-    std::vector<int> incr_arr_1m = gen_increasing_rand_arr(1000000, 10);
+    std::vector<int> incr_arr_100k = gen_increasing_rand_arr(100000, 10);
 
     // Decreasing arrays
     std::vector<int> decr_arr_10 = gen_decreasing_rand_arr(10, 10);
     std::vector<int> decr_arr_100 = gen_decreasing_rand_arr(100, 10);
     std::vector<int> decr_arr_1k = gen_decreasing_rand_arr(1000, 10);
-    std::vector<int> decr_arr_1m = gen_decreasing_rand_arr(1000000, 10);
+    std::vector<int> decr_arr_100k = gen_decreasing_rand_arr(100000, 10);
 
     // Measure runtime of sorting algorithms
-    int numIterations = 1000; // for 10, 100, 1000
-    int numIterations_1m = 1; // for 1m
+    int numIterations = 100; // for 10, 100, 1000
+    // int numIterations_1m = 1; // for 1m
 
     // Test random arrays
-    std::cout << "Random arrays" << std::endl;
-    std::cout << "Size: 10" << std::endl;
+    std::cout << "RANDOM ARRAYS" << std::endl;
+    std::cout << std::endl;
+    std::cout << "SIZE: 10" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, rand_arr_10.data(), rand_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, rand_arr_10.data(), rand_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, rand_arr_10.data(), rand_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, rand_arr_10.data(), rand_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, rand_arr_10.data(), rand_arr_10.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 100" << std::endl;
+    std::cout << "SIZE: 100" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, rand_arr_100.data(), rand_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, rand_arr_100.data(), rand_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, rand_arr_100.data(), rand_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, rand_arr_100.data(), rand_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, rand_arr_100.data(), rand_arr_100.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 1000" << std::endl;
+    std::cout << "SIZE: 1K" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, rand_arr_1k.data(), rand_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, rand_arr_1k.data(), rand_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, rand_arr_1k.data(), rand_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, rand_arr_1k.data(), rand_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, rand_arr_1k.data(), rand_arr_1k.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 1m" << std::endl;
-    std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, rand_arr_1m.data(), rand_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, rand_arr_1m.data(), rand_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, rand_arr_1m.data(), rand_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, rand_arr_1m.data(), rand_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, rand_arr_1m.data(), rand_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
+    std::cout << "SIZE: 100K" << std::endl;
+    std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, rand_arr_100k.data(), rand_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, rand_arr_100k.data(), rand_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, rand_arr_100k.data(), rand_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, rand_arr_100k.data(), rand_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, rand_arr_100k.data(), rand_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
     // Test increasing arrays
-    std::cout << "Increasing arrays" << std::endl;
-    std::cout << "Size: 10" << std::endl;
+    std::cout << "RANDOMLY INCREASING ARRAYS" << std::endl;
+    std::cout << std::endl;
+    std::cout << "SIZE: 10" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, incr_arr_10.data(), incr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, incr_arr_10.data(), incr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, incr_arr_10.data(), incr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, incr_arr_10.data(), incr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, incr_arr_10.data(), incr_arr_10.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 100" << std::endl;
+    std::cout << "SIZE: 100" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, incr_arr_100.data(), incr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, incr_arr_100.data(), incr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, incr_arr_100.data(), incr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, incr_arr_100.data(), incr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, incr_arr_100.data(), incr_arr_100.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 1000" << std::endl;
+    std::cout << "SIZE: 1K" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, incr_arr_1k.data(), incr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, incr_arr_1k.data(), incr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, incr_arr_1k.data(), incr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, incr_arr_1k.data(), incr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, incr_arr_1k.data(), incr_arr_1k.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 1m" << std::endl;
-    std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, incr_arr_1m.data(), incr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, incr_arr_1m.data(), incr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, incr_arr_1m.data(), incr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, incr_arr_1m.data(), incr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-   // std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, incr_arr_1m.data(), incr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
+    std::cout << "SIZE: 100K" << std::endl;
+    std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, incr_arr_100k.data(), incr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, incr_arr_100k.data(), incr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, incr_arr_100k.data(), incr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, incr_arr_100k.data(), incr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, incr_arr_100k.data(), incr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
     // Test decreasing arrays
-    std::cout << "Decreasing arrays" << std::endl;
-    std::cout << "Size: 10" << std::endl;
+    std::cout << "RANDOMLY DECREASING ARRAYS" << std::endl;
+    std::cout << "SIZE: 10" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, decr_arr_10.data(), decr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, decr_arr_10.data(), decr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, decr_arr_10.data(), decr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, decr_arr_10.data(), decr_arr_10.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, decr_arr_10.data(), decr_arr_10.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 100" << std::endl;
+    std::cout << "SIZE: 100" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, decr_arr_100.data(), decr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, decr_arr_100.data(), decr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, decr_arr_100.data(), decr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, decr_arr_100.data(), decr_arr_100.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, decr_arr_100.data(), decr_arr_100.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
-    std::cout << "Size: 1000" << std::endl;
+    std::cout << "SIZE: 1K" << std::endl;
     std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, decr_arr_1k.data(), decr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, decr_arr_1k.data(), decr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, decr_arr_1k.data(), decr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, decr_arr_1k.data(), decr_arr_1k.size(), numIterations) << " ms" << std::endl;
     std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, decr_arr_1k.data(), decr_arr_1k.size(), numIterations) << " ms" << std::endl;
 
-    std::cout << "Size: 1m" << std::endl;
-    std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, decr_arr_1m.data(), decr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, decr_arr_1m.data(), decr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, decr_arr_1m.data(), decr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, decr_arr_1m.data(), decr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
-    // std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, decr_arr_1m.data(), decr_arr_1m.size(), numIterations_1m) << " ms" << std::endl;
+    std::cout << "SIZE: 100K" << std::endl;
+    std::cout << "Insertion sort: " << measure_runtime_insertion(insertion_sort, decr_arr_100k.data(), decr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Selection sort: " << measure_runtime_selection(selectio_sort, decr_arr_100k.data(), decr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Merge sort: " << measure_runtime_merge(merge_sort, decr_arr_100k.data(), decr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Bubble sort: " << measure_runtime_bubble(bubble_sort, decr_arr_100k.data(), decr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << "Quick sort: " << measure_runtime_quick(quick_sort, decr_arr_100k.data(), decr_arr_100k.size(), numIterations) << " ms" << std::endl;
+    std::cout << std::endl;
 
     return 0;
 }

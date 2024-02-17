@@ -25,7 +25,7 @@ ____
 
  <br />
 
-While I had originally intended for this program to be ran in a `.ipynb` file, but I
+I had originally intended for this program to be ran in a `.ipynb` file, but I
 encountered setbacks on my system when trying to run computationally taxing cells
 in the notebook, namely on values of input `n = 1M`; upon consultation with my
 peers, I decided therefore to rewrite my sorting algorithms in C++11, and reduce the

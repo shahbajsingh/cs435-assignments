@@ -39,7 +39,7 @@ ____
 
 ##### Results
 
-
+![fig1](Figure_1.png)
 
 We find that, as expected, the execution time increases almost parabolically with input size as the time complexity of Gale-Shapley is $O(n^2)$. If we were to compare this to a brute-force implementation, say in the form of:
 

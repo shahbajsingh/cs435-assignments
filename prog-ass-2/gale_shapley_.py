@@ -127,7 +127,7 @@ def main():
     '''
 
     # Generate preference lists
-    input_sizes = [10, 100, 1000, 10000, 100000]
+    input_sizes = [10, 100, 1000, 10000, 20000]
     exec_times = []
     val_stable_times = []
 

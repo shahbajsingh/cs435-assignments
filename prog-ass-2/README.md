@@ -69,7 +69,7 @@ stable_match_forced(women, men, pref_rank_w, pref_rank_m)
             Return the stable match
 </code>
 
-using the `permutations` module from the `itertools` library, we would probably not even be able to test it for comparison, as it would take on a time complexity of $O(n! \times n^2)$; Gale-Shapley is thus a far superior implementation of a stable matching algorithm, which is why it earned the Nobel Prize. The algorithm completes successfully in mere seconds; the overwhelming time and resource consumption of the program in [gale_shapley_.py](/prog-ass-2/gale_shapley_.py)is mainly the validation for actually checking that the stable match is valid (which it always is).
+using the `permutations` module from the `itertools` library, we would probably not even be able to test it for comparison, as it would take on a time complexity of $O(n! \times n^2)$; Gale-Shapley is thus a far superior implementation of a stable matching algorithm, which is why it earned the Nobel Prize. The algorithm completes successfully in mere seconds; the overwhelming time and resource consumption of the program in [gale_shapley_.py](/prog-ass-2/gale_shapley_.py) is mainly the validation for actually checking that the stable match is valid (which it always is).
 
 Because the validation was so time consuming compared to running the algorithm, for `n = 100000`, I skipped the validation as it had already been proved stable over multiple runs, so that I could produce a plot within reasonable time. Displayed are the execution times I was able to extract, and the plot that was generated with them.
 

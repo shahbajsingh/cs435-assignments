@@ -39,63 +39,63 @@ class Graph:
 
 
 def bellman_ford(graph, source):
-    distance = {node: float('inf') for node in graph.nodes}
-    distance[source] = 0
+    dist = {node: float('inf') for node in graph.nodes}
+    dist[source] = 0
 
-    for _ in range(len(graph.nodes) - 1):
+    for _ in range(len(graph.nodes) - 1): # relax edges repeatedly
         for u in graph.edges:
             for v in graph.edges[u]:
-                if distance[u] + graph.edges[u][v] < distance[v]:
-                    distance[v] = distance[u] + graph.edges[u][v]
+                if dist[u] + graph.edges[u][v] < dist[v]:
+                    dist[v] = dist[u] + graph.edges[u][v]
 
     # Check for negative-weight cycles
     for u in graph.edges:
         for v in graph.edges[u]:
-            if distance[u] + graph.edges[u][v] < distance[v]:
+            if dist[u] + graph.edges[u][v] < dist[v]:
                 raise ValueError("Graph contains a negative weight cycle")
-
-    return distance
-
-
-import heapq
-
-def dijkstra(graph, source):
-    distance = {node: float('inf') for node in graph.nodes}
-    distance[source] = 0
-    priority_queue = [(0, source)]
-
-    while priority_queue:
-        current_distance, u = heapq.heappop(priority_queue)
-        if current_distance > distance[u]:
-            continue
-
-        for v in graph.edges.get(u, {}):
-            distance_via_u = current_distance + graph.edges[u][v]
-            if distance_via_u < distance[v]:
-                distance[v] = distance_via_u
-                heapq.heappush(priority_queue, (distance_via_u, v))
-
-    return distance
-
-def floyd_warshall(graph):
-    nodes = list(graph.nodes)
-    dist = {u: {v: float('inf') for v in nodes} for u in nodes}
-    for node in nodes:
-        dist[node][node] = 0
-
-    for u in graph.edges:
-        for v in graph.edges[u]:
-            dist[u][v] = graph.edges[u][v]
-
-    for k in nodes:
-        for i in nodes:
-            for j in nodes:
-                if dist[i][j] > dist[i][k] + dist[k][j]:
-                    dist[i][j] = dist[i][k] + dist[k][j]
 
     return dist
 
-def time_function(f, *args):
+
+import heapq # for priority queue in Dijkstra's algorithm (which node to visit next)
+
+def dijkstra(graph, source):
+    dist = {node: float('inf') for node in graph.nodes} # shortest distance from source to node
+    dist[source] = 0 # distance from source to source is 0
+    pq = [(0, source)] # priority queue of (distance, node) pairs
+
+    while pq: # while the priority queue is not empty
+        curr_dist, u = heapq.heappop(pq) # get the node with smallest distance
+        if curr_dist > dist[u]: # if a better path to u already found, skip
+            continue
+
+        for v in graph.edges.get(u, {}): # for each neighbour of u
+            dist_via_u = curr_dist + graph.edges[u][v] # distance to v via u
+            if dist_via_u < dist[v]: # if a better path to v found
+                dist[v] = dist_via_u # update the distance to v
+                heapq.heappush(pq, (dist_via_u, v)) # add v to the priority queue
+
+    return dist
+
+def floyd_warshall(graph): 
+    nodes = list(graph.nodes) # list of nodes
+    dist = {u: {v: float('inf') for v in nodes} for u in nodes} # dist[u][v] is the shortest distance from u to v
+    for node in nodes: # distance from a node to itself is 0
+        dist[node][node] = 0 
+
+    for u in graph.edges: # distance from u to v is the weight of the edge (u, v)
+        for v in graph.edges[u]: 
+            dist[u][v] = graph.edges[u][v] 
+
+    for k in nodes: # for each intermediate node k
+        for i in nodes: # for each pair of nodes i, j
+            for j in nodes: 
+                if dist[i][j] > dist[i][k] + dist[k][j]: # if better path from i to j via k found
+                    dist[i][j] = dist[i][k] + dist[k][j] # update distance from i to j
+
+    return dist
+
+def time_function(f, *args): # time a function
     import time
     start = time.time()
     f(*args)
@@ -105,73 +105,84 @@ def main():
     print("Graph of 5 nodes and 10 edges")
     graph = Graph()
     graph.generate_random_graph(5, 10)
-    print(graph.edges)
+    # print(graph.edges)
 
-    print("Times")
+    # print("Times")
     print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
     print("Dijkstra:", time_function(dijkstra, graph, 0))
     print("Floyd-Warshall:", time_function(floyd_warshall, graph))
+
+    print()
 
     print("Graph of 10 nodes and 20 edges")
     graph = Graph()
     graph.generate_random_graph(10, 20)
     # print(graph.edges)
 
-    print("Times")
+    # print("Times")
     print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
     print("Dijkstra:", time_function(dijkstra, graph, 0))
     print("Floyd-Warshall:", time_function(floyd_warshall, graph))
+
+    print()
 
     print("Graph of 100 nodes and 200 edges")
     graph = Graph()
     graph.generate_random_graph(100, 200)
     # print(graph.edges)
 
-    print("Times")
+    # print("Times")
     print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
     print("Dijkstra:", time_function(dijkstra, graph, 0))
     print("Floyd-Warshall:", time_function(floyd_warshall, graph))
+
+    print()
 
     print("Graph of 1000 nodes and 2000 edges")
     graph = Graph()
     graph.generate_random_graph(1000, 2000)
     # print(graph.edges)
 
-    print("Times")
+    # print("Times")
     print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
     print("Dijkstra:", time_function(dijkstra, graph, 0))
     print("Floyd-Warshall:", time_function(floyd_warshall, graph))
+
+    print()
 
     print("Graph of 10K nodes and 20K edges")
     graph = Graph()
     graph.generate_random_graph(10000, 20000)
     # print(graph.edges)
 
-    print("Times")
+    # print("Times")
     print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
     print("Dijkstra:", time_function(dijkstra, graph, 0))
     print("Floyd-Warshall:", time_function(floyd_warshall, graph))
 
-    print("Graph of 100K nodes and 200K edges")
-    graph = Graph()
-    graph.generate_random_graph(100000, 200000)
-    # print(graph.edges)
+    # print()
 
-    print("Times")
-    print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
-    print("Dijkstra:", time_function(dijkstra, graph, 0))
-    print("Floyd-Warshall:", time_function(floyd_warshall, graph))
+    # print("Graph of 100K nodes and 200K edges")
+    # graph = Graph()
+    # graph.generate_random_graph(100000, 200000)
+    # # print(graph.edges)
 
-    print("Graph of 1M nodes and 2M edges")
-    graph = Graph()
-    graph.generate_random_graph(1000000, 2000000)
-    # print(graph.edges)
+    # # print("Times")
+    # print("Bellman-Ford:", time_function(bellman_ford, graph, 0))
+    # print("Dijkstra:", time_function(dijkstra, graph, 0))
+    # print("Floyd-Warshall:", time_function(floyd_warshall, graph))
 
-    print("Times")
-    print("Bellman-Ford:", time_function(bellman_ford, graph, 0))    
-    print("Dijkstra:", time_function(dijkstra, graph, 0))
-    print("Floyd-Warshall:", time_function(floyd_warshall, graph))
+    # print()
+
+    # print("Graph of 1M nodes and 2M edges")
+    # graph = Graph()
+    # graph.generate_random_graph(1000000, 2000000)
+    # # print(graph.edges)
+
+    # # print("Times")
+    # print("Bellman-Ford:", time_function(bellman_ford, graph, 0))    
+    # print("Dijkstra:", time_function(dijkstra, graph, 0))
+    # print("Floyd-Warshall:", time_function(floyd_warshall, graph))
 
 if __name__ == "__main__":
     main()
-    
